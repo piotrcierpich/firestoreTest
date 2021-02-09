@@ -7,6 +7,7 @@ public class Product {
     private String description;
     private String name;
     private String id;
+    private Integer availableQuantity;
     private Price price;
 
     public String getDescription() {
@@ -39,5 +40,13 @@ public class Product {
 
     public void setPrice(Price price) {
         this.price = price;
+    }
+
+    public Integer getAvailableQuantity() {
+        return availableQuantity;
+    }
+
+    public void setAvailableQuantity(Integer availableQuantity) {
+        this.availableQuantity = availableQuantity;
     }
 }

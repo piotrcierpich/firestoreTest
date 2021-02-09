@@ -42,4 +42,16 @@ public class ProductController {
         String result = firestoreService.save(product);
         return ResponseEntity.ok(result);
     }
+
+    @PutMapping(path = "collection/{id}/availableQuantity")
+    public ResponseEntity parallelAvailableQuantityUpdate(@PathVariable String id, @RequestBody Product product) throws ExecutionException, InterruptedException {
+        String result = firestoreService.parallelAvailableQuantityUpdate(id);
+        return ResponseEntity.ok(result);
+    }
+
+    @PutMapping(path = "collection/{id}/transactionalAvailableQuantity")
+    public ResponseEntity parallelTransactionalAvailableQuantityUpdate(@PathVariable String id, @RequestBody Product product) throws ExecutionException, InterruptedException {
+        String result = firestoreService.parallelTransactionalAvailableQuantityUpdate(id);
+        return ResponseEntity.ok(result);
+    }
 }
